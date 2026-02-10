@@ -2,50 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For My Love 💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
-      color: #fff;
-      text-align: center;
-      padding: 30px;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-top: 40px;
-    }
-    p {
-      font-size: 1.2em;
-      margin-top: 20px;
-    }
-    .heart {
-      font-size: 4em;
-      animation: pulse 1.5s infinite;
-      margin-top: 30px;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-  </style>
+  <title>My Valentine ❤️</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>For My Love 💕</h1>
-  <p>
-    This website is a small gift from my heart to yours.  
-    Thank you for being my everything 💖
-  </p>
+<!-- ❤️ HEART RAIN -->
+<div id="heart-rain"></div>
 
-  <div class="heart">❤️</div>
+<!-- 💌 SLIDE 1 -->
+<div class="slide active" id="slide1">
+  <div class="card">
+    <h1>A Little Surprise 💖</h1>
+    <p>
+      Hey Burhan ❤️… only for you 😘<br>
+      To unlock this you need the secret key —<br>
+      the special date when you made me yours 💌😉
+    </p>
+    <input type="text" id="password" placeholder="Enter password">
+    <button onclick="checkPassword()">Enter ❤️</button>
+    <p id="error" class="error"></p>
+  </div>
+</div>
 
-  <p>
-    Forever yours 🌹
-  </p>
+<!-- 💘 SLIDE 2 -->
+<div class="slide" id="slide2">
+  <div class="card">
+    <img src="bs.jpg" class="photo" alt="Love">
+    <h1>Will you be my Valentine? 💌</h1>
+    <p>Not just today… but forever 💖</p>
+    <button onclick="yes()">YES 💕</button>
+    <button onclick="no()">NO 🙈</button>
+    <p id="oops" class="error"></p>
+  </div>
+</div>
 
+<!-- ❤️ SLIDE 3 -->
+<div class="slide" id="slide3">
+  <div class="card">
+    <h1>Happy Valentine's Day ❤️</h1>
+    <img src="love.jpg" class="photo" alt="Us">
+    <p id="finalText" class="typing"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
-</html>
+</html>"

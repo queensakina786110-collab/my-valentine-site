@@ -49,8 +49,8 @@ function no(){
 // LIVE TYPING FINAL TEXT (fits inside card with spacing)
 const finalMessage = [
   "Thank you for choosing me as your Valentine ❤️",
-  "I feel so lucky to be yours 😘❤️",
-  "I am forever grateful for you ☺️💖",
+  "I feel so lucky to be yours 😘",
+  "I am forever grateful for you 💖",
   "I love you endlessly 💕"
 ];
 
@@ -75,7 +75,7 @@ function typeLine() {
       finalText.innerHTML += "<br><br>"; // line break between sentences
       charIndex = 0;
       line++;
-      setTimeout(setTimeout, 400);
+      setTimeout(typeLine, 400);
     }
   }
 }
