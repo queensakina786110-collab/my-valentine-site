@@ -42,7 +42,7 @@ function yes() {
 }
 
 function no() {
-  oopsMsg.innerText = “Come on now… it’s me 😘 I know you’re teasing ❤️”;
+  oopsMsg.innerText ="Come on now… it’s me 😘 I know you’re teasing❤️!";
 }
 
 /* FINAL MESSAGE */
