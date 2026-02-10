@@ -1,0 +1,104 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #f3b6c4, #fbe1e6);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:'Poppins', sans-serif;
+}
+
+/* SLIDES */
+.slide {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.slide.active { display: flex; }
+
+/* CARD */
+.card {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 18px rgba(216, 167, 177, 0.6);
+  width: 85%;
+  max-width: 360px;
+}
+
+/* HEADINGS */
+h1 {
+  font-family: 'Poppins', sans-serif;
+  color: #7a1c3a;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+p { color: #3d0f1f; font-size: 14px; }
+
+/* INPUT */
+input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  margin: 10px 0;
+}
+
+/* BUTTONS */
+button {
+  padding: 10px 20px;
+  margin: 8px;
+  border-radius: 20px;
+  border: none;
+  background: #e8a1b2;
+  color: #3d0f1f;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover { transform: scale(1.05); }
+
+/* PHOTOS */
+.photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 3px solid #c97b8a;
+  margin-bottom: 15px;
+}
+
+/* ERROR / MESSAGE */
+.error { color: #ff4f81; font-weight: bold; margin-top: 10px; }
+
+/* HEART RAIN */
+.heart {
+  position: fixed;
+  top: -20px;
+  font-size: 20px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  0% { transform: translateX(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateX(var(--x)) translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* Slide 3 typing text inside card */
+.typing {
+  font-family: 'Poppins', sans-serif; /* readable font */
+  font-size: 18px;
+  font-weight: 500; 
+  color: #7a1c3a;
+  line-height: 2;        /* proper spacing between lines */
+  white-space: pre-line; /* respects line breaks */
+  word-wrap: break-word;
+  max-width: 100%;
+  text-align: center;
+}
