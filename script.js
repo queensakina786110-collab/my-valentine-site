@@ -42,15 +42,15 @@ function yes() {
 }
 
 function no() {
-  oopsMsg.innerText = "Aww… don’t be shy 😅❤️ Try again!";
+  oopsMsg.innerText = “Come on now… it’s me 😘 I know you’re teasing ❤️”;
 }
 
 /* FINAL MESSAGE */
 const finalMessage = [
-  "Thank you for choosing me as your Valentine ❤️",
+  "Thank you for choosing me as your Valentine 🙈❤️",
   "I feel so lucky to be yours 😘❤️",
-  "I am forever grateful for you ☺️💖",
-  "I love you endlessly 💕"
+  "I am forever grateful to Allah for you ☺️💖",
+  "I love you endlessly 😘💕"
 ];
 
 let line = 0;
