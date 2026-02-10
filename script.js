@@ -1,4 +1,3 @@
-// PASSWORD
 const passwordInput = document.getElementById('password');
 const errorMsg = document.getElementById('error');
 const oopsMsg = document.getElementById('oops');
@@ -6,29 +5,29 @@ const finalText = document.getElementById('finalText');
 
 const correctPassword = "10august2024";
 
-// HEART RAIN
+/* ❤️ HEART RAIN (SLOW & LESS DISTURBING) */
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
   heart.innerText = "❤️";
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (6 + Math.random() * 6) + "s";
-  heart.style.setProperty("--x", (Math.random() * 200 - 100) + "px");
+  heart.style.animationDuration = (10 + Math.random() * 8) + "s"; // slower
+  heart.style.setProperty("--x", (Math.random() * 120 - 60) + "px");
   document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 12000);
-}, 400);
+  setTimeout(() => heart.remove(), 18000);
+}, 1200); // fewer hearts
 
-// SLIDE CONTROL
-function goToSlide(n){
+/* SLIDE CONTROL */
+function goToSlide(n) {
   document.querySelectorAll(".slide").forEach(s => s.classList.remove("active"));
   document.getElementById("slide" + n).classList.add("active");
 
-  if(n===3) startTypingFinal();
+  if (n === 3) startTypingFinal();
 }
 
-// PASSWORD CHECK
-function checkPassword(){
-  if(passwordInput.value.trim() === correctPassword){
+/* PASSWORD CHECK */
+function checkPassword() {
+  if (passwordInput.value.trim() === correctPassword) {
     errorMsg.innerText = "";
     goToSlide(2);
   } else {
@@ -36,21 +35,21 @@ function checkPassword(){
   }
 }
 
-// YES / NO BUTTONS
-function yes(){
+/* YES / NO */
+function yes() {
   oopsMsg.innerText = "Yay! You said YES 💕 I’m so happy 😘";
   goToSlide(3);
 }
 
-function no(){
+function no() {
   oopsMsg.innerText = "Aww… don’t be shy 😅❤️ Try again!";
 }
 
-// LIVE TYPING FINAL TEXT (fits inside card with spacing)
+/* FINAL MESSAGE */
 const finalMessage = [
   "Thank you for choosing me as your Valentine ❤️",
-  "I feel so lucky to be yours 😘",
-  "I am forever grateful for you 💖",
+  "I feel so lucky to be yours 😘❤️",
+  "I am forever grateful for you ☺️💖",
   "I love you endlessly 💕"
 ];
 
@@ -65,17 +64,17 @@ function startTypingFinal() {
 }
 
 function typeLine() {
-  if(line < finalMessage.length){
+  if (line < finalMessage.length) {
     const currentLine = finalMessage[line];
-    if(charIndex < currentLine.length){
+    if (charIndex < currentLine.length) {
       finalText.innerHTML += currentLine.charAt(charIndex);
       charIndex++;
       setTimeout(typeLine, 60);
     } else {
-      finalText.innerHTML += "<br><br>"; // line break between sentences
+      finalText.innerHTML += "<br><br>";
       charIndex = 0;
       line++;
-      setTimeout(typeLine, 400);
+      setTimeout(typeLine, 500); // FIXED BUG HERE
     }
   }
 }
