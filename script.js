@@ -84,7 +84,7 @@ function typeLine(){
             charIndex++;
             setTimeout(typeLine, 60);
         } else {
-            finalText.innerHTML += "<br><br>";
+            finalText.innerHTML += "<br>";
             charIndex = 0;
             line++;
             setTimeout(typeLine, 400);
