@@ -4,8 +4,8 @@ const attemptsMsg = document.getElementById('attempts');
 const oopsMsg = document.getElementById('oops');
 const finalText = document.getElementById('finalText');
 
-const correctPassword = "10august2024";
-let attempts = 0;
+const correctPassword = "10-august-2024";
+let attempts = 3;
 
 /* ❤️ HEART RAIN (SLOW & LESS DISTURBING) */
 setInterval(() => {
