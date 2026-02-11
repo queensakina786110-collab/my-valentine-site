@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Valentine ❤️</title>
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -20,12 +19,13 @@
     <p>
       Hey Burhan ❤️ only for you 😘<br>
       To unlock this you need the secret key —<br>
-      The special date when you made me yours(Propose)💌😉<br>
-      (dd-month-yyyy)<br>
+      The special date when you made me yours (Propose) 💌😉<br>
+      Format: dd-month-yyyy
     </p>
     <input type="text" id="password" placeholder="Enter password">
     <button onclick="checkPassword()">Enter ❤️</button>
     <p id="error" class="error"></p>
+    <p id="attempts" class="hint"></p>
   </div>
 </div>
 
@@ -35,7 +35,7 @@
     <img src="bs.jpg" class="photo" alt="Love">
     <h1>Will you be my Valentine? 💌</h1>
     <p>Not just today… but forever 💖</p>
-    <button onclick="yes()">YES 🙈</button>
+    <button onclick="yes()">YES 💕</button>
     <button onclick="no()">NO 😅</button>
     <p id="oops" class="error"></p>
   </div>
