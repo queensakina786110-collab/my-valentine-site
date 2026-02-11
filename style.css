@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
   min-height: 100vh;
@@ -19,9 +15,7 @@ body {
   align-items: center;
   padding: 30px 0;
 }
-.slide.active {
-  display: flex;
-}
+.slide.active { display: flex; }
 
 /* CARD */
 .card {
@@ -38,15 +32,12 @@ body {
 /* HEADINGS */
 h1 {
   color: #7a1c3a;
-  font-size: 26px;
+  font-size: 28px;
   margin-bottom: 12px;
 }
 
 /* TEXT */
-p {
-  color: #3d0f1f;
-  font-size: 15px;
-}
+p { color: #3d0f1f; font-size: 15px; }
 
 /* INPUT */
 input {
@@ -68,6 +59,7 @@ button {
   font-weight: bold;
   cursor: pointer;
 }
+button:hover { transform: scale(1.05); }
 
 /* PHOTOS */
 .photo {
@@ -79,12 +71,9 @@ button {
   margin-bottom: 15px;
 }
 
-/* ERROR */
-.error {
-  color: #ff4f81;
-  font-weight: bold;
-  margin-top: 10px;
-}
+/* ERROR / HINT */
+.error { color: #ff4f81; font-weight: bold; margin-top: 10px; }
+.hint { color: #7a1c3a; font-size: 14px; margin-top: 5px; }
 
 /* HEARTS */
 .heart {
