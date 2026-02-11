@@ -4,7 +4,7 @@ body {
   min-height: 100vh;
   background: linear-gradient(135deg, #f3b6c4, #fbe1e6);
   overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family:'Poppins', sans-serif;
 }
 
 /* SLIDES */
@@ -30,23 +30,13 @@ body {
 }
 
 /* HEADINGS */
-h1 {
-  color: #7a1c3a;
-  font-size: 28px;
-  margin-bottom: 12px;
-}
+h1 { color: #7a1c3a; font-size: 26px; margin-bottom: 12px; }
 
 /* TEXT */
 p { color: #3d0f1f; font-size: 15px; }
 
 /* INPUT */
-input {
-  width: 80%;
-  padding: 10px;
-  border-radius: 12px;
-  border: none;
-  margin: 12px 0;
-}
+input { width: 80%; padding: 10px; border-radius: 12px; border: none; margin: 12px 0; }
 
 /* BUTTONS */
 button {
@@ -71,9 +61,8 @@ button:hover { transform: scale(1.05); }
   margin-bottom: 15px;
 }
 
-/* ERROR / HINT */
+/* ERROR */
 .error { color: #ff4f81; font-weight: bold; margin-top: 10px; }
-.hint { color: #7a1c3a; font-size: 14px; margin-top: 5px; }
 
 /* HEARTS */
 .heart {
@@ -85,10 +74,7 @@ button:hover { transform: scale(1.05); }
 }
 
 @keyframes fall {
-  to {
-    transform: translateY(120vh) translateX(var(--x)) rotate(360deg);
-    opacity: 0;
-  }
+  to { transform: translateY(120vh) translateX(var(--x)) rotate(360deg); opacity: 0; }
 }
 
 /* FINAL TYPING TEXT */
