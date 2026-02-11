@@ -1,21 +1,14 @@
 // PASSWORD & ATTEMPTS
 const passwordInput = document.getElementById('password');
 const errorMsg = document.getElementById('error');
-const finalText = document.getElementById('finalText');
+const attemptsMsg = document.getElementById('attempts');
 const oopsMsg = document.getElementById('oops');
+const finalText = document.getElementById('finalText');
 
-const correctPassword = "10aug2024";
-let attempts = 0;
-const maxAttempts = 3;
+const correctPassword = "10august2024";
+let attemptsLeft = 3;
 
-// Show attempts counter below password box
-const attemptsMsg = document.createElement("p");
-attemptsMsg.style.color = "#7a1c3a";
-attemptsMsg.style.fontWeight = "bold";
-attemptsMsg.style.marginTop = "5px";
-document.querySelector("#slide1 .card").appendChild(attemptsMsg);
-
-// HEART RAIN
+// HEART RAIN (slower & fewer)
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
@@ -35,41 +28,42 @@ function goToSlide(n) {
   if (n === 3) startTypingFinal();
 }
 
-// PASSWORD CHECK WITH ATTEMPTS
+// PASSWORD CHECK
 function checkPassword() {
-  attempts++;
   if (passwordInput.value.trim() === correctPassword) {
     errorMsg.innerText = "";
-    attemptsMsg.innerText = "Attempts used: " + attempts + " / " + maxAttempts;
+    attemptsMsg.innerText = "";
     goToSlide(2);
   } else {
-    if (attempts < maxAttempts) {
-      errorMsg.innerText = "Oops… wrong password 😉 Try again!";
-      attemptsMsg.innerText = "Attempts used: " + attempts + " / " + maxAttempts;
+    attemptsLeft--;
+    if(attemptsLeft > 0){
+      errorMsg.innerText = `Oops… wrong password 😉 Try again!`;
+      attemptsMsg.innerText = `Attempts left: ${attemptsLeft}`;
     } else {
-      errorMsg.innerText = "Oops… you’ve used all your 3 attempts 😘";
+      errorMsg.innerText = "No attempts left 😔";
       attemptsMsg.innerText = "";
       passwordInput.disabled = true;
     }
   }
 }
 
-// YES / NO BUTTONS
+// YES / NO
 function yes() {
   oopsMsg.innerText = "Yay! You said YES 💕 I’m so happy 😘";
   goToSlide(3);
 }
 
 function no() {
-  oopsMsg.innerText = "Come on now… it’s me 😘 I know you’re teasing❤️!";
+  oopsMsg.innerText = "Come on now… it’s me 😘 I know you’re teasing ❤️!";
 }
 
-// LIVE TYPING FINAL TEXT
+// FINAL MESSAGES (Slide 3)
 const finalMessage = [
-  "Thank you for choosing me as your Valentine 🙈❤️",
-  "I feel so lucky to be yours 😘❤️",
-  "I am forever grateful for you ☺️💖",
-  "I love you endlessly 😘💕"
+  "You make my days brighter ☀️",
+  "Being with you is the best adventure 😘",
+  "Every moment feels magical ✨",
+  "You are my favorite person to laugh with 😄",
+  "I can’t wait for all our memories together 🌸"
 ];
 
 let line = 0;
