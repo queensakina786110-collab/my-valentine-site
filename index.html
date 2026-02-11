@@ -1,65 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Valentine ❤️</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <title>Valentine Surprise</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ❤️ HEART RAIN -->
-<div id="heart-rain"></div>
+<div class="container">
 
-<!-- 💌 SLIDE 1: PASSWORD -->
-<div class="slide active" id="slide1">
-  <div class="card">
-    <h1>For My Love 💖</h1>
-    <p>
-      Hey Burhan ❤️ only for you 😘<br>
-      To unlock this, enter the secret key —<br>
-      The special date when you made me yours 💌😉<br>
-      (dd-month-yyyy)
-    </p>
-    <input type="text" id="password" placeholder="Enter password">
-    <button onclick="checkPassword()">Enter ❤️</button>
-    <p id="error" class="error"></p>
-  </div>
-</div>
+    <!-- 💕 SLIDE 1 -->
+    <div class="slide active" id="slide1">
+        <div class="card">
+            <h2>You make my days brighter ☀️</h2>
+            <button onclick="goToSlide(2)">Next 💌</button>
+        </div>
+    </div>
 
-<!-- 💘 SLIDE 2: YES/NO -->
-<div class="slide" id="slide2">
-  <div class="card">
-    <img src="bs.jpg" class="photo" alt="Love">
-    <h1>Will you be my Valentine? 💌</h1>
-    <p>Not just today… but forever 💖</p>
-    <button onclick="yes()">YES 🙈</button>
-    <button onclick="no()">NO 😅</button>
-    <p id="oops" class="error"></p>
-  </div>
-</div>
+    <!-- 💕 SLIDE 2 -->
+    <div class="slide" id="slide2">
+        <div class="card">
+            <h2>Every moment feels magical ✨</h2>
+            <button onclick="goToSlide(3)">Next 💕</button>
+        </div>
+    </div>
 
-<!-- 💌 SLIDE 3: MESSAGES -->
-<div class="slide" id="slide3">
-  <div class="card">
-    <h1>Messages for You ✉️❤️</h1>
-    <img src="love.jpg" id="slide3Pic" class="photo clickable" alt="Love">
-    <p id="finalText" class="typing"></p>
-    <p class="next-slide-note">Tap the photo for a special surprise 💖</p>
-  </div>
-</div>
+    <!-- 💕 SLIDE 3 -->
+    <div class="slide" id="slide3">
+        <div class="card">
+            <img src="IMG-20251113-WA0741.jpg" 
+                 class="photo" 
+                 id="slide3Pic"
+                 alt="Love Image">
+            <p class="tap-text">Tap on the picture 💖</p>
+        </div>
+    </div>
 
-<!-- 💖 SLIDE 4: FINAL MESSAGE -->
-<div class="slide" id="slide4">
-  <div class="card">
-    <h1>Just For You 😘❤️</h1>
-    <img src="IMG-20251113-WA0741.jpg" class="photo" alt="Forever Love">
-    <p class="final-slide-text">
-      I am forever grateful for Allah for you ☺️💖<br>
-      I love you endlessly 😘💕
-    </p>
-  </div>
+    <!-- 💖 SLIDE 4 -->
+    <div class="slide" id="slide4">
+        <div class="card">
+            <img src="IMG_20260212_002603.png" 
+                 class="photo" 
+                 alt="Valentine Template">
+        </div>
+    </div>
+
 </div>
 
 <script src="script.js"></script>
