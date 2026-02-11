@@ -1,27 +1,27 @@
 // PASSWORD & ATTEMPTS
 const passwordInput = document.getElementById('password');
 const errorMsg = document.getElementById('error');
-const oopsMsg = document.getElementById('oops');
 const finalText = document.getElementById('finalText');
+const oopsMsg = document.getElementById('oops');
 
 const correctPassword = "10august2024";
 let attempts = 0;
 const maxAttempts = 3;
 
-// DISPLAY ATTEMPTS
+// Show attempts counter below password box
 const attemptsMsg = document.createElement("p");
 attemptsMsg.style.color = "#7a1c3a";
 attemptsMsg.style.fontWeight = "bold";
-attemptsMsg.style.marginTop = "8px";
+attemptsMsg.style.marginTop = "5px";
 document.querySelector("#slide1 .card").appendChild(attemptsMsg);
 
-// ❤️ HEART RAIN (slower, less disturbing)
+// HEART RAIN
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
   heart.innerText = "❤️";
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (10 + Math.random() * 8) + "s"; // slow
+  heart.style.animationDuration = (10 + Math.random() * 8) + "s";
   heart.style.setProperty("--x", (Math.random() * 120 - 60) + "px");
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 18000);
@@ -35,21 +35,21 @@ function goToSlide(n) {
   if (n === 3) startTypingFinal();
 }
 
-// PASSWORD CHECK WITH 3 ATTEMPTS
+// PASSWORD CHECK WITH ATTEMPTS
 function checkPassword() {
   attempts++;
   if (passwordInput.value.trim() === correctPassword) {
     errorMsg.innerText = "";
-    attemptsMsg.innerText = "Attempts used: " + attempts;
+    attemptsMsg.innerText = "Attempts used: " + attempts + " / " + maxAttempts;
     goToSlide(2);
   } else {
     if (attempts < maxAttempts) {
       errorMsg.innerText = "Oops… wrong password 😉 Try again!";
-      attemptsMsg.innerText = "Attempts used: " + attempts + " / 3";
+      attemptsMsg.innerText = "Attempts used: " + attempts + " / " + maxAttempts;
     } else {
       errorMsg.innerText = "Oops… you’ve used all your 3 attempts 😘";
       attemptsMsg.innerText = "";
-      passwordInput.disabled = true; // disable input
+      passwordInput.disabled = true;
     }
   }
 }
@@ -64,7 +64,7 @@ function no() {
   oopsMsg.innerText = "Come on now… it’s me 😘 I know you’re teasing❤️!";
 }
 
-// LIVE TYPING FINAL TEXT (fits inside card with spacing)
+// LIVE TYPING FINAL TEXT
 const finalMessage = [
   "Thank you for choosing me as your Valentine 🙈❤️",
   "I feel so lucky to be yours 😘❤️",
@@ -90,7 +90,7 @@ function typeLine() {
       charIndex++;
       setTimeout(typeLine, 60);
     } else {
-      finalText.innerHTML += "<br><br>"; // line break between sentences
+      finalText.innerHTML += "<br><br>";
       charIndex = 0;
       line++;
       setTimeout(typeLine, 500);
