@@ -1,9 +1,11 @@
 const passwordInput = document.getElementById('password');
 const errorMsg = document.getElementById('error');
+const attemptsMsg = document.getElementById('attempts');
 const oopsMsg = document.getElementById('oops');
 const finalText = document.getElementById('finalText');
 
 const correctPassword = "10august2024";
+let attempts = 0;
 
 /* ❤️ HEART RAIN (SLOW & LESS DISTURBING) */
 setInterval(() => {
@@ -15,7 +17,7 @@ setInterval(() => {
   heart.style.setProperty("--x", (Math.random() * 120 - 60) + "px");
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 18000);
-}, 1200); // fewer hearts
+}, 1200);
 
 /* SLIDE CONTROL */
 function goToSlide(n) {
@@ -25,17 +27,20 @@ function goToSlide(n) {
   if (n === 3) startTypingFinal();
 }
 
-/* PASSWORD CHECK */
+/* PASSWORD CHECK WITH ATTEMPTS */
 function checkPassword() {
+  attempts++;
   if (passwordInput.value.trim() === correctPassword) {
     errorMsg.innerText = "";
+    attemptsMsg.innerText = "Attempts: " + attempts;
     goToSlide(2);
   } else {
     errorMsg.innerText = "Oops… wrong password 😉 Try again!";
+    attemptsMsg.innerText = "Attempts: " + attempts;
   }
 }
 
-/* YES / NO */
+/* YES / NO BUTTONS */
 function yes() {
   oopsMsg.innerText = "Yay! You said YES 💕 I’m so happy 😘";
   goToSlide(3);
@@ -47,10 +52,10 @@ function no() {
 
 /* FINAL MESSAGE */
 const finalMessage = [
-  "Thank you for choosing me as your Valentine 🙈❤️",
-  "I feel so lucky to be yours 😘❤️",
-  "I am forever grateful to Allah for you ☺️💖",
-  "I love you endlessly 😘💕"
+  "Thank you for choosing me as your Valentine ❤️",
+  "I feel so lucky to be yours 😘",
+  "I am forever grateful to Allah for you 💖",
+  "I love you endlessly 💕"
 ];
 
 let line = 0;
@@ -74,7 +79,7 @@ function typeLine() {
       finalText.innerHTML += "<br><br>";
       charIndex = 0;
       line++;
-      setTimeout(typeLine, 500); // FIXED BUG HERE
+      setTimeout(typeLine, 500);
     }
   }
 }
