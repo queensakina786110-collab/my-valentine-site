@@ -4,7 +4,7 @@ const errorMsg = document.getElementById('error');
 const finalText = document.getElementById('finalText');
 const oopsMsg = document.getElementById('oops');
 
-const correctPassword = "10august2024";
+const correctPassword = "10aug2024";
 let attempts = 0;
 const maxAttempts = 3;
 
