@@ -1,10 +1,28 @@
-function goToSlide(slideNumber) {
+const correctPassword = "10-08-2024";
+
+function goToSlide(num) {
     document.querySelectorAll(".slide").forEach(slide => {
         slide.classList.remove("active");
     });
 
-    document.getElementById("slide" + slideNumber)
+    document.getElementById("slide" + num)
         .classList.add("active");
+}
+
+function checkPassword() {
+    const input = document.getElementById("passwordInput").value;
+
+    if (input === correctPassword) {
+        goToSlide(2);
+    } else {
+        document.getElementById("errorMsg").innerText =
+            "Wrong date 😜 Try again!";
+    }
+}
+
+function teaseNo() {
+    document.getElementById("teaseText").innerText =
+        "Oh really? I know you're just teasing 😘 Try again!";
 }
 
 const slide3Pic = document.getElementById("slide3Pic");
