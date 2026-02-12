@@ -55,17 +55,19 @@ button{
   font-size:16px;
 }
 .enter-btn{ background:#ff66a3;color:white; }
-.yes-btn{ background:#ff4d88;color:white; }
+.yes-btn{ background:#ff4d88;color:white; margin-right:10px; }
+.no-btn{ background:#ff4d88;color:white; }
 
-/* Clickable No Box */
-.no-box{
-  background:#ff4d88; 
-  color:white; 
-  border-radius:20px; 
-  padding:10px; 
-  margin-top:10px; 
-  cursor:pointer;
-  display:inline-block;
+/* Back / Thank you Button */
+.back-btn{
+  position:absolute;
+  bottom:20px;
+  background:#ff99cc;
+  color:white;
+  padding:8px 18px;
+  border-radius:20px;
+  font-size:14px;
+  z-index:100;
 }
 
 /* Image frame */
@@ -107,6 +109,14 @@ button{
   text-align:center;
 }
 
+/* Top line slide 3 */
+.top-line{
+  color:#ff3399;
+  font-family:'Pacifico', cursive;
+  font-size:20px;
+  margin-bottom:15px;
+}
+
 /* Slide 4 */
 .last-frame{
   border:2px solid #ff4d88;
@@ -132,12 +142,7 @@ button{
   display:inline-block;
   width:85%;
   max-width:360px;
-}
-.thank-you{
-  margin-top:20px;
-  font-family:'Pacifico', cursive;
-  font-size:22px;
-  color:#ff4d88;
+  font-weight:bold;
 }
 
 /* Rose Petals */
@@ -173,16 +178,17 @@ button{
 <div class="slide" id="slide2">
   <div class="box">
     <h2 style="color:#e75480; font-family:'Pacifico', cursive;">Will You Be My Valentine? 💘</h2>
-    <img src="bs.jpg" width="200" style="margin:10px 0;"><br>
+    <img src="bs.jpg" width="200"><br>
     <button class="yes-btn" onclick="nextSlide(3)">Yes 💖</button>
-    <div class="no-box" onclick="alert('Come on now… I know you’re teasing 🙈❤️')">No ❌</div>
+    <button class="no-btn" onclick="showNoMsg()">No 💖</button>
+    <div id="noMsg" style="margin-top:10px; display:none; background:#ff4d88; color:white; border-radius:20px; padding:10px;"></div>
   </div>
   <button class="back-btn" onclick="nextSlide(1)">⬅ Back</button>
 </div>
 
 <!-- SLIDE 3 -->
 <div class="slide" id="slide3">
-  <div class="tap-line" id="topText" style="color:#ff3399; font-family:'Pacifico', cursive; font-size:20px;">Stay tuned till the end 💖</div>
+  <div class="top-line" id="topText">Stay tuned till the end 💖</div>
 
   <div class="frame">
     <img src="/IMG-20251113-WA0741.jpg" class="square" onclick="nextSlide(4)">
@@ -190,7 +196,7 @@ button{
 
   <div class="text-box" id="typingText"></div>
 
-  <div class="tap-line" id="tapText" style="color:#e75480; font-family:'Pacifico', cursive; font-size:18px;"></div>
+  <div class="tap-line" id="tapText"></div>
 
   <button class="back-btn" onclick="nextSlide(2)">⬅ Back</button>
 </div>
@@ -200,12 +206,12 @@ button{
   <div class="final-text-top" id="finalTop"></div>
 
   <div class="last-frame">
-    <img src="/IMG_20260212_002603.png" class="last-img">
+    <img src="/IMG_20260212_152926.png" class="last-img">
   </div>
 
   <div class="final-text-bottom" id="finalBottom"></div>
 
-  <div class="thank-you">Thank You ❤️</div>
+  <button class="back-btn" onclick="alert('Thank You ❤️')">Thank You ❤️</button>
 </div>
 
 <!-- Soft Romantic Music -->
@@ -223,6 +229,12 @@ function checkPassword(){
   }
 }
 
+function showNoMsg(){
+  var msg=document.getElementById("noMsg");
+  msg.style.display="block";
+  msg.innerHTML="Come on now… I know it’s me you’re teasing 🙈❤️";
+}
+
 function nextSlide(num){
   document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));
   document.getElementById('slide'+num).classList.add('active');
@@ -232,12 +244,10 @@ function nextSlide(num){
   else{ document.getElementById("bgMusic").pause(); }
 }
 
-var text3=`I feel grateful every day that I found you 💕
-You are my calm in every storm 🌸
-With you, love feels magical and pure ✨
-I want every adventure of life with you 🌍
-You are my safest place and my forever ❤️
-Our story is my favorite love story 💖`;
+var text3=`Every day I thank Allah for us 😊❤️
+In this selfish world, He blessed me with the truest heart to love 😚🥹❤️
+I'm ready to explore every adventure, hold your hand through every chapter and treasure every moment 🌍🙈❤️
+The next slide holds a little glimpse of our love story 😘❤️`;
 
 function startTypingSlide3(){
   var area=document.getElementById("typingText");
@@ -274,7 +284,7 @@ function startSlide4(){
   music.volume=0.25;
   music.play();
 
-  // Typing top & bottom
+  // Typing top
   var topText="Happy Valentine's Day My Lifeline 💖";
   var bottomText="I love you forever 💓";
   var topArea=document.getElementById("finalTop");
