@@ -3,6 +3,10 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For My Burhan From his Sakina❤️</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&family=Dancing+Script:wght@600&family=Satisfy&display=swap" rel="stylesheet">
+
 <style>
 body{
   margin:0;
@@ -58,15 +62,17 @@ button{
 .yes-btn{ background:#ff4d88;color:white; margin-right:10px; }
 .no-btn{ background:#ff4d88;color:white; }
 
-/* Back / Thank you Button */
+/* Stylish Back / Thank You Button */
 .back-btn{
   position:absolute;
-  bottom:20px;
-  background:#ff99cc;
+  bottom:25px;
+  background:linear-gradient(45deg,#ff4d88,#ff99cc);
   color:white;
-  padding:8px 18px;
-  border-radius:20px;
-  font-size:14px;
+  padding:10px 22px;
+  border-radius:25px;
+  font-size:16px;
+  font-family:'Satisfy', cursive;
+  box-shadow:0 5px 15px rgba(255,105,180,0.4);
   z-index:100;
 }
 
@@ -100,21 +106,27 @@ button{
   font-weight:500;
 }
 
-/* Tap line style slide 3 */
-.tap-line{
-  margin-top:15px;
-  font-family:cursive;
-  font-size:18px;
-  color:#e75480;
+/* Stay Tuned Line */
+.top-line{
+  font-family:'Great Vibes', cursive;
+  font-size:28px;
+  margin-bottom:18px;
+  background: linear-gradient(45deg,#ff3399,#ff66cc,#ff1493);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight:bold;
   text-align:center;
 }
 
-/* Top line slide 3 */
-.top-line{
-  color:#ff3399;
-  font-family:'Pacifico', cursive;
-  font-size:21px;
-  margin-bottom:15px;
+/* Tap Line */
+.tap-line{
+  margin-top:18px;
+  font-family:'Dancing Script', cursive;
+  font-size:22px;
+  color:#ff0080;
+  text-align:center;
+  text-shadow:0 0 8px rgba(255,105,180,0.6);
+  font-weight:bold;
 }
 
 /* Slide 4 */
@@ -133,8 +145,8 @@ button{
 }
 .final-text-top, .final-text-bottom{
   margin:10px auto;
-  font-family:cursive;
-  font-size:25px;
+  font-family:'Pacifico', cursive;
+  font-size:24px;
   color:#ff0066;
   border:2px dashed #ff99cc;
   padding:10px;
@@ -169,7 +181,7 @@ button{
       by proposing to me🤩❤️<br><br>
       <strong>Format: DD/MONTH/YYYY</strong>
     </p>
-    <input type="text" id="password" placeholder="Ex:-26december2025">
+    <input type="text" id="password" placeholder="Ex:-10august2024">
     <button class="enter-btn" onclick="checkPassword()">Unlock 💖</button>
   </div>
 </div>
@@ -188,14 +200,13 @@ button{
 
 <!-- SLIDE 3 -->
 <div class="slide" id="slide3">
-  <div class="top-line" id="topText">Stay tuned till the end something interesting is waiting for you 💖</div>
+  <div class="top-line">Stay tuned till the end something interesting is waiting for you 💖</div>
 
   <div class="frame">
     <img src="IMG-20251113-WA0741.jpg" class="square" onclick="nextSlide(4)">
   </div>
 
   <div class="text-box" id="typingText"></div>
-
   <div class="tap-line" id="tapText"></div>
 
   <button class="back-btn" onclick="nextSlide(2)">⬅ Back</button>
@@ -214,7 +225,7 @@ button{
   <button class="back-btn" onclick="alert('Thank You ❤️')">Thank You ❤️</button>
 </div>
 
-<!-- Soft Romantic Music -->
+<!-- Music -->
 <audio id="bgMusic" loop>
   <source src="https://cdn.pixabay.com/download/audio/2022/02/23/audio_d1718f4b43.mp3?filename=romantic-piano-ambient-10956.mp3">
 </audio>
@@ -268,7 +279,6 @@ function startTypingSlide3(){
 }
 
 function startSlide4(){
-  // Rose petals
   setInterval(function(){
     var petal=document.createElement("div");
     petal.classList.add("petal");
@@ -279,13 +289,11 @@ function startSlide4(){
     setTimeout(()=>petal.remove(),7000);
   },300);
 
-  // Music
   var music=document.getElementById("bgMusic");
   music.volume=0.25;
   music.play();
 
-  // Typing top
-  var topText="Happy Valentine's Day My Lifeline My forever 🙈❤️";
+  var topText="Happy Valentine's Day My Lifeline My Forever 🙈❤️";
   var bottomText="I love you so much ❤️";
   var topArea=document.getElementById("finalTop");
   var bottomArea=document.getElementById("finalBottom");
