@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
   overflow: hidden;
 }
 
@@ -26,15 +26,21 @@ body {
 
 .card {
   text-align: center;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255,255,255,0.2);
   padding: 30px;
   border-radius: 20px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 }
 
 h2 {
-  color: #c2185b;
-  margin-bottom: 20px;
+  color: #880e4f;
+}
+
+input {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  margin: 10px 0;
 }
 
 button {
@@ -44,30 +50,31 @@ button {
   color: white;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 16px;
+  margin: 5px;
 }
 
 button:hover {
-  background: #d81b60;
+  background: #c2185b;
 }
 
 .photo {
-  max-width: 90%;
-  max-height: 70vh;
-  border-radius: 15px;
+  width: 250px;
+  border-radius: 20px;
+  margin: 15px 0;
   cursor: pointer;
 }
 
 .tap-text {
-  margin-top: 8px;
-  font-size: 18px;
-  color: #ad1457;
-  font-weight: bold;
   font-family: cursive;
+  color: #ad1457;
 }
 
-/* 🌹 Rose Petals */
+.final-img {
+  max-width: 95%;
+  max-height: 90vh;
+}
 
+/* 🌹 Petals */
 .petal {
   position: fixed;
   top: -20px;
