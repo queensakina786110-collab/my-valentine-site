@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Valentine Surprise 💖</title>
+    <title>For My Love 💖</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
 
-    <!-- 💕 SLIDE 1 -->
+    <!-- 🔐 SLIDE 1 PASSWORD -->
     <div class="slide active" id="slide1">
         <div class="card">
-            <h2>You make my days brighter ☀️</h2>
-            <button onclick="goToSlide(2)">Next 💌</button>
+            <h2>Enter the Secret Date 💌</h2>
+            <input type="password" id="passwordInput" placeholder="DD-MM-YYYY">
+            <button onclick="checkPassword()">Enter 💖</button>
+            <p id="errorMsg"></p>
         </div>
     </div>
 
-    <!-- 💕 SLIDE 2 -->
+    <!-- 💌 SLIDE 2 -->
     <div class="slide" id="slide2">
         <div class="card">
-            <h2>Every moment feels magical ✨</h2>
-            <button onclick="goToSlide(3)">Next 💕</button>
+            <h2>Will You Be My Valentine? 💘</h2>
+            <div class="btn-group">
+                <button onclick="goToSlide(3)">Yes 😘</button>
+                <button onclick="teaseNo()">No 🙈</button>
+            </div>
+            <p id="teaseText"></p>
         </div>
     </div>
 
     <!-- 💕 SLIDE 3 -->
     <div class="slide" id="slide3">
         <div class="card">
+            <h2>Messages for You ❤️</h2>
             <img src="IMG-20251113-WA0741.jpg" 
                  class="photo" 
-                 id="slide3Pic"
-                 alt="Love Image">
-            <p class="tap-text">Tap on the picture 💖</p>
+                 id="slide3Pic">
+            <p>You make my days brighter ☀️</p>
+            <p>Being with you is the best adventure 😘</p>
+            <p class="tap-text">Tap the photo for something special 💖</p>
         </div>
     </div>
 
-    <!-- 💖 SLIDE 4 -->
+    <!-- 🌹 SLIDE 4 -->
     <div class="slide" id="slide4">
-        <div class="card">
-            <img src="IMG_20260212_002603.png" 
-                 class="photo" 
-                 alt="Valentine Template">
-        </div>
+        <img src="IMG_20260212_002603.png" class="final-img">
     </div>
 
 </div>
