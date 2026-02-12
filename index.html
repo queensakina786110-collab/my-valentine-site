@@ -5,12 +5,12 @@
 <title>For My Burhan From his Sakina❤️</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&family=Dancing+Script:wght@600&family=Satisfy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&family=Dancing+Script:wght@700&family=Satisfy&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
-  font-family:'Poppins', sans-serif;
+  font-family: Arial, sans-serif;
   background:linear-gradient(135deg,#ffd6e8,#ffeaf4);
   text-align:center;
   overflow:hidden;
@@ -27,7 +27,7 @@ body{
 }
 .active{ display:flex; }
 
-/* Cute Box */
+/* Box */
 .box{
   background:white;
   padding:25px;
@@ -62,18 +62,26 @@ button{
 .yes-btn{ background:#ff4d88;color:white; margin-right:10px; }
 .no-btn{ background:#ff4d88;color:white; }
 
-/* Stylish Back / Thank You Button */
+/* Wrong password message */
+.error-msg{
+  margin-top:10px;
+  color:#ff0033;
+  font-weight:bold;
+  font-size:14px;
+  display:none;
+}
+
+/* Back / Thank You */
 .back-btn{
   position:absolute;
   bottom:25px;
-  background:linear-gradient(45deg,#ff4d88,#ff99cc);
+  background:#ff4d88;
   color:white;
   padding:10px 22px;
   border-radius:25px;
   font-size:16px;
   font-family:'Satisfy', cursive;
   box-shadow:0 5px 15px rgba(255,105,180,0.4);
-  z-index:100;
 }
 
 /* Image frame */
@@ -92,7 +100,7 @@ button{
   cursor:pointer;
 }
 
-/* Text Box Slide 3 */
+/* Slide 3 Text Box */
 .text-box{
   background:#fff0f6;
   padding:20px;
@@ -106,26 +114,20 @@ button{
   font-weight:500;
 }
 
-/* Stay Tuned Line */
+/* Stay Tuned - CLEARLY DIFFERENT FONT & COLOR */
 .top-line{
   font-family:'Great Vibes', cursive;
-  font-size:28px;
+  font-size:30px;
+  color:#ff1493;
   margin-bottom:18px;
-  background: linear-gradient(45deg,#ff3399,#ff66cc,#ff1493);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight:bold;
-  text-align:center;
 }
 
-/* Tap Line */
+/* Tap line - Different font & visible */
 .tap-line{
   margin-top:18px;
   font-family:'Dancing Script', cursive;
-  font-size:22px;
+  font-size:24px;
   color:#ff0080;
-  text-align:center;
-  text-shadow:0 0 8px rgba(255,105,180,0.6);
   font-weight:bold;
 }
 
@@ -177,12 +179,12 @@ button{
     <h2 style="color:#e75480; font-family:'Pacifico', cursive; font-size:28px;">Hey Burhan ❤️</h2>
     <p style="color:#d1006f; font-size:16px;">
       To unlock this surprise 💌<br>
-      Write the special date when you made me yours forever 😘💕<br>
-      by proposing to me🤩❤️<br><br>
+      Write the special date when you made me yours forever 😘💕<br><br>
       <strong>Format: DD/MONTH/YYYY</strong>
     </p>
     <input type="text" id="password" placeholder="Ex:-10august2024">
     <button class="enter-btn" onclick="checkPassword()">Unlock 💖</button>
+    <div class="error-msg" id="errorMsg">Wrong password 😘 Try again</div>
   </div>
 </div>
 
@@ -222,21 +224,19 @@ button{
 
   <div class="final-text-bottom" id="finalBottom"></div>
 
-  <button class="back-btn" onclick="alert('Thank You ❤️')">Thank You ❤️</button>
+  <button class="back-btn">Thank You ❤️</button>
 </div>
-
-<!-- Music -->
-<audio id="bgMusic" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/02/23/audio_d1718f4b43.mp3?filename=romantic-piano-ambient-10956.mp3">
-</audio>
 
 <script>
 function checkPassword(){
   var pass=document.getElementById("password").value;
+  var error=document.getElementById("errorMsg");
+
   if(pass==="10august2024"){
+    error.style.display="none";
     nextSlide(2);
   }else{
-    alert("Wrong date 😘 Try again");
+    error.style.display="block";
   }
 }
 
@@ -252,7 +252,6 @@ function nextSlide(num){
 
   if(num===3){ startTypingSlide3(); }
   if(num===4){ startSlide4(); }
-  else{ document.getElementById("bgMusic").pause(); }
 }
 
 var text3=`Every day I thank Allah for us 😊❤️
@@ -279,6 +278,13 @@ function startTypingSlide3(){
 }
 
 function startSlide4(){
+  var topText="Happy Valentine's Day My Lifeline My Forever 🙈❤️";
+  var bottomText="I love you so much ❤️";
+  var topArea=document.getElementById("finalTop");
+  var bottomArea=document.getElementById("finalBottom");
+  topArea.innerHTML=""; bottomArea.innerHTML="";
+  var i=0, j=0;
+
   setInterval(function(){
     var petal=document.createElement("div");
     petal.classList.add("petal");
@@ -288,17 +294,6 @@ function startSlide4(){
     document.body.appendChild(petal);
     setTimeout(()=>petal.remove(),7000);
   },300);
-
-  var music=document.getElementById("bgMusic");
-  music.volume=0.25;
-  music.play();
-
-  var topText="Happy Valentine's Day My Lifeline My Forever 🙈❤️";
-  var bottomText="I love you so much ❤️";
-  var topArea=document.getElementById("finalTop");
-  var bottomArea=document.getElementById("finalBottom");
-  topArea.innerHTML=""; bottomArea.innerHTML="";
-  var i=0, j=0;
 
   var topInterval=setInterval(function(){
     if(i<topText.length){ topArea.innerHTML+=topText.charAt(i); i++; }
